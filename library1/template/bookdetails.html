@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container mx-auto text-center fs-4 border  shadow mt-5 p-5">
+<h3 class="fw-bold fs-1" >BOOK DETAILS</h3>
+    <table class="table table-bordered mt-5 ">
+        <tr>
+            <th>title</th>
+            <th>author</th>
+            <th>price</th>
+            <th>pages</th>
+            <th>language</th>
+            <th>Image</th>
+        </tr>
+        <tr>
+            <td>{{books.title}}</td>
+            <td>{{books.author}}</td>
+            <td>{{books.price}}</td>
+            <td>{{books.pages}}</td>
+            <td>{{books.language}}</td>
+            <td><img src="{{books.image.url}}" height="100px" width="100px"></td>
+
+</div>
+ {% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container w-50 mt-5 p-5 shadow text-center">
+<h1 class="fw-bold">BMI</h1>
+{% if bmi %}
+  <h1 class="mt-5">BMI is {{bmi}}</h1>
+{% else %}
+  <form method="POST">
+    {% csrf_token %}
+
+  {{form}}
+
+<div class="mt-2">
+  <button type="submit" class="btn btn-primary">ADD</button>
+</div>
+</form>
+  {% endif %}
+
+{% endblock %}

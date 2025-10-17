@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container mx-auto text-center fs-2 rounded border shadow  mt-5 p-5">
+<h3> SEARCH RESULT</h3>
+        {% if book %}
+    <table class="table table-bordered mt-5">
+        <tr>
+            <th>title</th>
+            <th>author</th>
+            <th>price</th>
+            <th>pages</th>
+            <th>language</th>
+            <th>Image</th>
+        </tr>
+        {% for i in book %}
+        <tr>
+            <td>{{i.title}}</td>
+            <td>{{i.author}}</td>
+            <td>{{i.price}}</td>
+            <td>{{i.pages}}</td>
+            <td>{{i.language}}</td>
+            <td><img src="{{i.image.url}}" height="100px" width="100px"></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <h3 class="mt-5 fw-light text-danger"> NOT RESULT FOUND</h3>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mx-auto text-center border rounded-pill bg-light shadow mt-5 w-50 p-5">
+<h3 class="fs-4 mb-3">Welcome To Teacher Page</h3>
+   {% if user.is_authenticated %}
+     <h3 class="mt-5 fw-light">Welcome {{user.username}}</h3>
+    {% else %}
+    <h3 class="mt-5 fw-light">Hi, Guest</h3>
+    {% endif%}
+</div>
+{%endblock%}

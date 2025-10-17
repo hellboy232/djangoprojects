@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container w-50 mt-5 p-5 shadow text-center">
+<h1 class="fw-bold">SIGN UP</h1>
+{% if username and password and place and gender and role and email %}
+    <h2 class="mt-4">Details Are </h2>
+  <h3 class="mt-3">Name is {{username}}</h3>
+  <h3 class="mt-3">Password is {{password}}</h3>
+  <h3 class="mt-3">Place is {{place}}</h3>
+  <h3 class="mt-3">Gender is {{gender}}</h3>
+  <h3 class="mt-3">Role is {{role}}</h3>
+  <h3 class="mt-3">Email is {{email}}</h3>
+{% else %}
+    <form method="post">
+    {% csrf_token %}
+
+      {{form}}
+
+<div class="mt-2">
+  <button type="submit" class="btn btn-primary">SIGN UP</button>
+</div>
+    </form>
+{% endif %}
+</div>
+{% endblock %}

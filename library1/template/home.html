@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mx-auto text-center border rounded-circle shadow mt-5 p-5">
+<h3 class="fs-1">Welcome To Home Page</h3>
+    {% if user.is_authenticated%}
+    <h3 class="mt-5 fw-light">Welcome {{user.username}}</h3>
+    {% else%}
+    <h3 class="mt-5 fw-light">Hi, Guest</h3>
+    {%endif%}
+</div>
+{% endblock %}
+
+
+<!--<h1>WELCOME TO LIBRARY</h1>-->
+<!--<a href="{% url 'books:home' %}">HOME</a>-->
+<!--<a href="{% url 'books:addbooks' %}">ADD BOOK</a>-->
+<!--<a href="{% url 'books:viewbooks' %}">VIEW BOOK</a>-->
+<!--<a href="{% url 'users:register' %}">REGISTER</a>-->
+<!--<a href="{% url 'users:login' %}">LOGIN</a>-->
+<!--<a href="{% url 'users:logout' %}">LOGOUT</a>-->

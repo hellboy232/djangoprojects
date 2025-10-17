@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container w-50 mt-5 p-5 shadow text-center">
+<h1 class="fw-bold">BMI</h1>
+<form method="POST">
+    {% csrf_token %}
+  <div class="mb-3 mt-5">
+    <label class="form-label">Enter the weight</label>
+    <input type="number" class="form-control" name="n1">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Enter the height</label>
+    <input type="number" class="form-control" name="n2">
+  </div>
+   <button type="submit" class="btn btn-primary">BMI</button>
+  </form>
+{% if bmi %}
+  <h1 class="mt-5">BMI is {{bmi}}</h1>
+{% endif %}
+</div>
+{% endblock %}

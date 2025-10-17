@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container mx-auto my-auto mt-5 p-5 border  shadow text-center ">
+<h1 class="fw-bold">MOVIE</h1>
+    <div class="card mb-3 mt-5" style="max-width:800px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ movies.image.url }}" class="img-fluid rounded-start mx-auto" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body fs-5">
+        <h5 class="card-title text-center fw-bold fs-2">{{movies.title}}</h5>
+        <p class="card-text text-start">description : {{movies.description}}</p>
+        <p class="card-text text-start">language : {{movies.language}}</p>
+          <p class="card-text text-start">year : {{movies.year}}</p>
+          <p class="card-text text-start">director : {{movies.director}}</p>
+          <a href="{% url 'app1:update' movies.id%}" class="btn btn-primary me-5 mt-5">Update </a> <a href="{% url 'app1:delete' movies.id%}" class="btn btn-primary mt-5">Delete </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

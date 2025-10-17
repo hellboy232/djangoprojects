@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container w-50 mt-5 p-5 shadow text-center">
+<h1 class="fw-bold mb-3">ADDITION</h1>
+{% if result %}
+  <h1>sum is {{result}}</h1>
+  {% else %}
+  <form method="post">
+{% csrf_token %}
+
+  {{ form|crispy }}
+
+<div class="mt-2">
+  <button type="submit" class="btn btn-primary">ADD</button>
+</div>
+</form>
+  {% endif %}
+</div>
+{% endblock %}

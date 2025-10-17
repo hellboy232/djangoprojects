@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container w-50 mt-5 p-5 shadow text-center">
+<h1 class="fw-bold">FACTORIAL</h1>
+<form method="POST">
+    {% csrf_token %}
+  <div class="mb-3 mt-5">
+    <label class="form-label">Enter the Number</label>
+    <input type="number" class="form-control" name="n">
+  </div>
+   <button type="submit" class="btn btn-primary">FACTORIAL</button>
+  </form>
+{% if fact %}
+  <h1 class="mt-5">factorial is {{fact}}</h1>
+{% endif %}
+</div>
+{% endblock %}

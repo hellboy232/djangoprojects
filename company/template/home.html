@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="fluid-container d-flex justify-content-center  w-100 p-3 mt-5 " >
+<a href="{% url 'app1:addemploye' %}" class="btn btn-primary m-5 px-5 py-3 fs-1">Add employees</a>
+<a href="{% url 'app1:viewemploye' %}" class="btn btn-primary m-5 px-5 py-3 fs-1">Employee details</a>
+</div>
+{% endblock %}
